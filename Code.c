@@ -20,8 +20,8 @@ char fMode[7] = "MANUAL"; //風扇模式
 char fPower[7] = "LOW"; //風扇轉速
 float fNormalTemp = 25.00f; //預期溫度
 
-char dPWRead[5];
-char dMode[5];
+char dPWRead[5]; //輸入密碼
+char dMode[5]; //門禁模式
 
 //智能照明設置
 const byte lSensor = 4;
@@ -189,7 +189,7 @@ void loop() {
         strcpy(card3, dCard); //存取卡號添加到預設卡3
         checkInput();
       } else checkRFID(dCard);
-      strcpy(dMode, "NONE");
+      strcpy(dMode, "NONE"); //門禁模式切換為無
     } else checkRFID(dCard);
 
     //卡片進入停止模式
